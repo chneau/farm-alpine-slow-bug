@@ -1,0 +1,29 @@
+{
+	"name": "farm-project",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "farm start",
+		"build": "farm build",
+		"upgrade": "bun update --latest",
+		"check": "deno fmt --use-tabs --quiet; oxlint --fix-dangerously --quiet; biome check --write --unsafe .",
+		"lint": "tsc",
+		"all": "bun run upgrade; bun run check; bun run lint",
+		"docker-build-fast": "time docker build --no-cache --tag=farm-alpine-slow-bug --file=Dockerfile.fast .",
+		"docker-build-slow": "time docker build --no-cache --tag=farm-alpine-slow-bug --file=Dockerfile.slow ."
+	},
+	"dependencies": {
+		"@ant-design/icons": "^5.6.0",
+		"antd": "^5.23.3",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"devDependencies": {
+		"@farmfe/cli": "^1.0.4",
+		"@farmfe/core": "^1.6.6",
+		"@farmfe/plugin-react": "^1.2.6",
+		"@types/react": "^19.0.8",
+		"core-js": "^3.40.0",
+		"@types/react-dom": "^19.0.3",
+		"react-refresh": "^0.16.0"
+	}
+}
